@@ -1,0 +1,32 @@
+{
+  "name": "directus-project-poc",
+  "version": "1.0.0",
+  "description": "POC of dev-friendly Directus project structure",
+  "main": "index.js",
+  "scripts": {
+    "init": "npx directus init",
+    "build": "directus-extension build && tsc",
+    "start": "npx directus bootstrap && npx directus start",
+    "migrate": "npx directus-auto-migrate migrate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Daniel Stoyanoff",
+  "license": "ISC",
+  "dependencies": {
+    "directus": "^9.0.0-rc.91",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "@directus/extension-sdk": "^9.0.0-rc.91",
+    "sass": "^1.38.2",
+    "typescript": "^4.4.2"
+  },
+  "directus:extension": {
+    "type": "interface",
+    "path": "./dist/interfaces/dictionary/index.js",
+    "source": "./src/interfaces/dictionary/index.js",
+    "host": "^9.0.0-rc.91",
+    "hidden": false
+  }
+}
