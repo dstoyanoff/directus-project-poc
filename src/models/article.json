@@ -1,0 +1,41 @@
+{
+  "name": "article",
+  "singleton": false,
+  "archive": true,
+  "sortField": "date_created",
+  "sortOrder": "desc",
+  "icon": "article",
+  "color": "#2dae45",
+  "hidden": false,
+  "fields": {
+    "id": {
+      "dataType": "number",
+      "autoIncrement": true
+    },
+    "article_title": {
+      "dataType": "string",
+      "maxLength": 80,
+      "required": true,
+      "interface": "input",
+      "display": "raw",
+      "conditions": {
+        "someCondition": "someValue"
+      }
+    },
+    "date_created": {
+      "dataType": "datetime",
+      "defaultValue": "null",
+      "interface": "date_picker"
+    },
+    "author": {
+      "references": {
+        "model": "author",
+        "field": "id",
+        "using": {
+          "model": "article_authors",
+          "field": "article_id"
+        }
+      }
+    }
+  }
+}

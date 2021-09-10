@@ -1,0 +1,59 @@
+{
+  "instanceName": "my-blog",
+  "languages": [
+    "en",
+    "de"
+  ],
+  "presets": [
+    {
+      "collection": "article",
+      "layout": "table",
+      "layoutOptions": {
+        "fields": [
+          "article_title",
+          "author"
+        ]
+      }
+    }
+  ],
+  "roles": {
+    "admin": {
+      "permissions": {
+        "*": "W"
+      }
+    },
+    "author": {
+      "permissions": {
+        "article": "W",
+        "author": "R"
+      },
+      "groups": [
+        {
+          "title": "Writing",
+          "collections": [
+            "article",
+            "author"
+          ]
+        }
+      ]
+    },
+    "public": {
+      "permissions": {
+        "article": "R",
+        "author": "R"
+      }
+    }
+  },
+  "files": {
+    "allowNewFolders": false,
+    "defaultLayout": "table",
+    "folders": {
+      "images": {
+        "layout": "cards",
+        "titleFormat": "$title",
+        "subtitleFormat": "$mimeType ($fileSize)",
+        "articles": true
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "author",
+  "singleton": false,
+  "archive": true,
+  "sortField": "name",
+  "sortOrder": "asc",
+  "icon": "person",
+  "hidden": false,
+  "fields": {
+    "id": {
+      "dataType": "number",
+      "autoIncrement": true
+    },
+    "name": {
+      "dataType": "string",
+      "maxLength": 80,
+      "required": true,
+      "interface": "input",
+      "display": "raw"
+    },
+    "articles": {
+      "references": {
+        "model": "article",
+        "field": "id",
+        "using": {
+          "model": "article_authors",
+          "field": "author_id"
+        }
+      }
+    }
+  }
+}
